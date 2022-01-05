@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import util from "util";
+
+console.log(util.inherits);
 
 function App() {
   const [count, setCount] = useState(0)

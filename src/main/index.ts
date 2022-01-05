@@ -14,7 +14,12 @@ if (!app.requestSingleInstanceLock()) {
 let win: BrowserWindow | null = null
 
 async function createWindow() {
-  win = new BrowserWindow();
+  win = new BrowserWindow({
+    webPreferences : {
+      nodeIntegration: true,
+      contextIsolation: false,
+    }
+  });
 
   if (app.isPackaged) {
     win.loadFile(path.join(__dirname, '../renderer/index.html'))
